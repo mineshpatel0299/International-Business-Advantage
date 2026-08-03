@@ -15,6 +15,7 @@ import {
 } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -67,29 +68,32 @@ export default function Navbar() {
       <div className="bg-[#0b1016] text-white px-6 py-6 flex justify-between items-center">
         {/* Logo */}
         <div className="flex flex-col items-center">
-          <div className="relative w-28 h-28 mb-1 border border-gray-600 rounded-full flex items-center justify-center bg-gradient-to-b from-[#16274a] to-black">
-             <div className="absolute top-0 text-[10px] tracking-[0.2em] w-full text-center mt-2 font-bold font-serif">INTERNATIONAL</div>
-             <div className="text-white text-3xl opacity-80">🗺️</div>
-             <div className="absolute bottom-0 text-[10px] tracking-[0.1em] w-full text-center mb-2 font-bold font-serif">BUSINESS ADVANTAGE</div>
-             <div className="absolute -right-3 top-4 text-[8px]">TM</div>
-          </div>
-          <div className="text-sm font-semibold tracking-wide">ibaglobalsearch.com</div>
+          <Link href="/" className="relative w-40 h-28 mb-1 flex items-center justify-center">
+            <Image 
+              src="/logo.png" 
+              alt="International Business Advantage Logo" 
+              fill 
+              className="object-contain" 
+            />
+          </Link>
         </div>
         
         {/* Right side buttons & search */}
-        <div className="flex flex-col gap-3 w-full max-w-[320px]">
-          <div className="flex gap-1 justify-end">
-            <button className="bg-[#3b82f6] hover:bg-blue-600 text-white text-[9px] font-bold px-4 py-2 flex-1">JOB SEEKERS LOGIN</button>
-            <button className="bg-[#3b82f6] hover:bg-blue-600 text-white text-[9px] font-bold px-4 py-2 flex-1">EMPLOYERS LOGIN</button>
-            <button className="bg-[#3b82f6] hover:bg-blue-600 text-white text-[9px] font-bold px-4 py-2 flex-1">PARTNERS LOGIN</button>
+        <div className="flex flex-col gap-[6px] w-full max-w-[420px]">
+          <div className="flex gap-[6px] justify-between w-full">
+            <button className="bg-[#429bf5] hover:bg-[#3182ce] text-white text-[11px] font-bold py-[9px] px-2 flex-1 whitespace-nowrap tracking-wide">JOB SEEKERS LOGIN</button>
+            <button className="bg-[#429bf5] hover:bg-[#3182ce] text-white text-[11px] font-bold py-[9px] px-2 flex-1 whitespace-nowrap tracking-wide">EMPLOYERS LOGIN</button>
+            <button className="bg-[#429bf5] hover:bg-[#3182ce] text-white text-[11px] font-bold py-[9px] px-2 flex-1 whitespace-nowrap tracking-wide">PARTNERS LOGIN</button>
           </div>
-          <div className="flex justify-end w-full">
-            <div className="flex border border-gray-400 w-full bg-white text-black h-[34px]">
-              <input type="text" placeholder="Search" className="w-full px-3 outline-none text-sm font-bold placeholder:text-[#1e3a8a] text-[#1e3a8a]" />
-              <button className="bg-[#1e40af] w-[34px] flex items-center justify-center text-white shrink-0 hover:bg-blue-900 transition">
-                <ChevronRight size={18} />
-              </button>
-            </div>
+          <div className="w-full border-[1.5px] border-white p-[3px] flex gap-[3px]">
+            <input 
+              type="text" 
+              placeholder="Search" 
+              className="w-full outline-none text-[15px] font-semibold placeholder:text-[#2a4d80] text-[#2a4d80] px-3 py-1 h-[32px] bg-white" 
+            />
+            <button className="bg-[#24589d] hover:bg-[#1a3f68] transition w-[40px] shrink-0 flex items-center justify-center text-white h-[32px]">
+              <ChevronRight size={22} strokeWidth={1.5} />
+            </button>
           </div>
         </div>
       </div>
