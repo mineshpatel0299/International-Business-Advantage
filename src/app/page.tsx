@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import LocationsBanner from "@/components/LocationsBanner";
+import AboutSection from "@/components/AboutSection";
 import NetworkSection from "@/components/NetworkSection";
 import GlobalSearchSection from "@/components/GlobalSearchSection";
 import AdvisorySection from "@/components/AdvisorySection";
@@ -14,6 +16,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#061224]">
       <Navbar />
       <Hero />
+      <LocationsBanner />
+      <AboutSection />
       <NetworkSection />
       <GlobalSearchSection />
       <AdvisorySection />
