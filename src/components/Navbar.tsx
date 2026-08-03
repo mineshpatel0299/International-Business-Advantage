@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <div className="w-full font-sans relative z-50 flex flex-col">
       {/* Top Bar */}
-      <div className="bg-[#0f172a] text-white py-1 px-4 flex justify-between items-center text-[11px]">
+      <div className="bg-[#0a2543] text-white py-1 px-4 flex justify-between items-center text-[11px]">
         <div className="flex gap-[6px]">
           <div className="border border-gray-400 p-[3px] rounded-[2px] cursor-pointer hover:bg-gray-700 transition">
             <FaFacebookF size={12} />
