@@ -5,9 +5,9 @@ export default function AboutSection() {
     <section className="w-full flex flex-col items-center pb-20 pt-10">
       
       {/* Main Content Area */}
-      <div className="w-full max-w-[1200px] px-4">
+      <div className="w-full max-w-[1400px] px-4">
         {/* Golden Border Container */}
-        <div className="border border-[#ffd700] p-8 md:p-16 w-full bg-[#071326] flex flex-col items-center text-center">
+        <div className="border border-[#ffd700] p-8 md:p-16 w-full bg-[#0a2543] flex flex-col items-center text-center">
           
           <h2 className="text-white text-3xl md:text-4xl font-medium tracking-widest mb-8 uppercase">
             About Us

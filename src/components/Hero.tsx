@@ -14,7 +14,7 @@ export default function Hero() {
           priority
         />
         {/* Dark overlay to make text more readable */}
-        <div className="absolute inset-0 bg-[#061224]/70"></div>
+        <div className="absolute inset-0 bg-[#0c1018]/70"></div>
       </div>
 
       {/* Carousel Navigation Arrows */}

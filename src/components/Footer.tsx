@@ -39,7 +39,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#0a1526] pt-16 pb-8 px-8 lg:px-16 border-t border-gray-800">
+    <footer className="w-full bg-[#0a2543] pt-16 pb-8 px-8 lg:px-16 border-t border-gray-800">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8">
         
         {/* Column 1: QUICK LINKS */}
