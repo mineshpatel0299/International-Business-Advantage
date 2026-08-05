@@ -1,33 +1,60 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section className="w-full flex flex-col items-center pb-20 pt-10">
-      
-      {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-4">
-        {/* Golden Border Container */}
-        <div className="border border-[#ffd700] p-8 md:p-16 w-full bg-[#0a2543] flex flex-col items-center text-center">
-          
-          <h2 className="text-white text-3xl md:text-4xl font-medium tracking-widest mb-8 uppercase">
-            About Us
-          </h2>
+    <section className="w-full flex flex-col items-center py-24 relative bg-[#f8f6f0] overflow-visible">
 
-          <div className="max-w-4xl mx-auto space-y-6 text-gray-300 text-sm md:text-base leading-relaxed tracking-wide">
-            <p>
-              <strong className="text-white font-semibold">International Business Advantage</strong> is a Global Search & Business Consulting Company. 
-            </p>
-            <p>
-              IBA undertakes complete projects of Search & Recruitment, Business Consulting, Coaching & Training Solutions with MNCs, Blue Chip Co's, Large Corporate Houses, SME & Family owned businesses since over two and a half decades, based at Gurgaon and have PAN India presence.
-            </p>
-            <p>
-              IBA provides its services in overseas market too.
-            </p>
+      {/* Main Content Area */}
+      <div className="w-full max-w-[1400px] px-8 lg:px-24 z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
+
+          {/* Left Side: Content */}
+          <div className="w-full lg:w-1/2 flex flex-col space-y-8 relative">
+            <div className="relative z-10">
+              <div className="flex items-center mb-4">
+                <span className="text-[#c5a365] text-xs font-semibold tracking-[0.2em] uppercase">
+                  About Us
+                </span>
+              </div>
+              <h2 className="text-[#081225] text-4xl lg:text-5xl font-light tracking-wide leading-tight">
+                Global Connections. <br />
+                Strategic Advantage.
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-gray-700 text-[15px] leading-relaxed font-light relative z-10 pr-4">
+              <p>
+                <strong className="text-[#081225] font-medium">International Business Advantage</strong> is a Global Search & Business Consulting Company.
+              </p>
+              <p>
+                IBA undertakes complete projects of Search & Recruitment, Business Consulting, Coaching & Training Solutions with MNCs, Blue Chip Co's, Large Corporate Houses, SME & Family owned businesses since over two and a half decades, based at Gurgaon and have PAN India presence.
+              </p>
+              <p>
+                IBA provides its services in overseas market too.
+              </p>
+            </div>
+
+            <div className="pt-4 relative z-10">
+              <button className="flex items-center gap-3 px-8 py-3 bg-[#081225] text-white text-xs font-semibold tracking-[0.15em] uppercase hover:bg-gray-800 transition-all duration-300">
+                KNOW MORE ABOUT US <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
-          
+
+          {/* Right Side: Image */}
+          <div className="w-full lg:w-1/2 relative mt-12 lg:mt-0">
+            <div className="relative w-full aspect-[4/3] overflow-hidden shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop"
+                alt="Corporate Boardroom"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
-
     </section>
   );
 }

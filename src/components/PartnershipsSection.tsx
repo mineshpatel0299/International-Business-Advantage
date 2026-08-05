@@ -1,55 +1,59 @@
 import React from 'react';
+import { Handshake, TrendingUp, Store, Network, Cpu, Banknote } from 'lucide-react';
 
 export default function PartnershipsSection() {
   const items = [
-    { title: "INVESTORS CONNECT", subtitle: "BUSINESS INVESTMENT PARTNERSHIP" },
-    { title: "MERGER & ACQUISITION", subtitle: "BUSINESS ADVISORY & COLLABORATION" },
-    { title: "FRANCHISE PARTNERSHIP", subtitle: "BUSINESS PARTNERSHIP" },
-    { title: "COLLABORATION & TIE-UPS", subtitle: "BUSINESS EXPANSION PARTNERSHIP" },
-    { title: "TECHNOLOGY PARTNERS", subtitle: "BUSINESS EXPANSION PARTNERSHIP" },
-    { title: "FUNDRAISING", subtitle: "FOUNDATION" },
+    { title: "INVESTORS CONNECT", subtitle: "BUSINESS INVESTMENT PARTNERSHIP", icon: <TrendingUp size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
+    { title: "MERGER & ACQUISITION", subtitle: "BUSINESS ADVISORY & COLLABORATION", icon: <Handshake size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
+    { title: "FRANCHISE PARTNERSHIP", subtitle: "BUSINESS PARTNERSHIP", icon: <Store size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
+    { title: "COLLABORATION & TIE-UPS", subtitle: "BUSINESS EXPANSION PARTNERSHIP", icon: <Network size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
+    { title: "TECHNOLOGY PARTNERS", subtitle: "BUSINESS EXPANSION PARTNERSHIP", icon: <Cpu size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
+    { title: "FUNDRAISING", subtitle: "FOUNDATION", icon: <Banknote size={28} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
   ];
 
   return (
-    <section className="w-full flex flex-col items-center pb-20">
+    <section className="w-full flex flex-col items-center py-24 bg-[#081225]">
       
       {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-4">
-        {/* Golden Border Container */}
-        <div className="border border-[#ffd700] p-8 md:p-12 w-full bg-[#0a2543]">
-          
-          <h2 className="text-white text-2xl md:text-3xl font-medium tracking-widest text-center mb-10 uppercase">
+      <div className="w-full max-w-[1400px] px-8 lg:px-24">
+        
+        {/* Header Area */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h3 className="text-[#c5a365] text-xs font-light tracking-[0.2em] uppercase mb-4">
+            Global Collaborations
+          </h3>
+          <h2 className="text-white text-3xl lg:text-4xl font-light leading-tight">
             Business Partnerships & Collaborations
           </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {items.map((item, idx) => (
-              <div key={idx} className="flex flex-col">
-                {/* Gray Placeholder Image */}
-                <div className="w-full aspect-[4/3] bg-[#cfd1d4] mb-3"></div>
-                
-                {/* Role Text */}
-                <div className="text-center mb-4 flex-1">
-                  <h3 className="text-white text-[13px] font-semibold tracking-wide leading-snug">{item.title}</h3>
-                  <p className="text-gray-400 text-[10px] tracking-wider mt-1 uppercase">{item.subtitle}</p>
-                </div>
-                
-                {/* Buttons Container */}
-                <div className="flex w-full mt-auto">
-                  <button className="flex-1 bg-[#1e4a86] hover:bg-[#1a3d6b] transition text-white py-2.5 px-1 text-[9px] font-bold tracking-wider text-center">
-                    READ MORE
-                  </button>
-                  <button className="flex-1 bg-[#3b82f6] hover:bg-blue-600 transition text-white py-2.5 px-1 text-[9px] font-bold tracking-wider text-center">
-                    REGISTER NOW
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+          <div className="w-16 h-0.5 bg-[#c5a365] mt-6"></div>
         </div>
-      </div>
 
+        {/* Grid Area */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((item, idx) => (
+            <div key={idx} className="bg-white flex flex-col items-center text-center p-8 transition-transform hover:-translate-y-1 duration-300">
+              
+              {item.icon}
+              
+              <div className="mb-8 flex-1 flex flex-col justify-center">
+                <h3 className="text-[#081225] text-[15px] font-semibold tracking-wide leading-snug mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-[10px] tracking-wider uppercase">{item.subtitle}</p>
+              </div>
+              
+              {/* Buttons Container */}
+              <div className="flex w-full gap-3 mt-auto">
+                <button className="flex-1 text-[#c5a365] border border-[#c5a365] hover:bg-[#c5a365] hover:text-[#081225] py-2.5 text-[10px] font-bold tracking-wider transition-colors">
+                  READ MORE
+                </button>
+                <button className="flex-1 bg-[#081225] text-white hover:bg-[#c5a365] py-2.5 text-[10px] font-bold tracking-wider transition-colors">
+                  REGISTER NOW
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+      </div>
     </section>
   );
 }

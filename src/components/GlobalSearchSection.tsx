@@ -1,4 +1,5 @@
 import React from 'react';
+import { Search, Briefcase, ChevronRight } from 'lucide-react';
 
 export default function GlobalSearchSection() {
   const roles = [
@@ -9,44 +10,43 @@ export default function GlobalSearchSection() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center pb-20">
+    <section className="w-full flex flex-col items-center py-24 bg-[#f8f6f0]">
       
       {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-4">
-        {/* Golden Border Container */}
-        <div className="border border-[#ffd700] p-8 md:p-12 w-full bg-[#0a2543]">
-          
-          <h2 className="text-white text-2xl md:text-3xl font-medium tracking-widest text-center mb-10 uppercase">
+      <div className="w-full max-w-[1400px] px-8 lg:px-24">
+        
+        {/* Header Area */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h3 className="text-[#c5a365] text-xs font-light tracking-[0.2em] uppercase mb-4">
+            Talent Acquisition
+          </h3>
+          <h2 className="text-[#081225] text-3xl lg:text-4xl font-light leading-tight">
             Global Search Company
           </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {roles.map((role, idx) => (
-              <div key={idx} className="flex flex-col">
-                {/* White Placeholder Image */}
-                <div className="w-full aspect-square bg-white mb-3"></div>
-                
-                {/* Role Text */}
-                <div className="text-center mb-4">
-                  <h3 className="text-white text-[12px] font-semibold tracking-wide">{role}</h3>
-                </div>
-                
-                {/* Buttons Container */}
-                <div className="flex w-full mt-auto">
-                  <button className="flex-1 bg-[#1e4a86] hover:bg-[#1a3d6b] transition text-white py-2 px-1 text-[10px] font-bold tracking-wider text-center leading-tight">
-                    JOB SEEKER<br />APPLY HERE
-                  </button>
-                  <button className="flex-1 bg-[#3b82f6] hover:bg-blue-600 transition text-white py-2 px-1 text-[10px] font-bold tracking-wider text-center leading-tight">
-                    EMPLOYER<br />APPLY HERE
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+          <div className="w-16 h-0.5 bg-[#c5a365] mt-6"></div>
         </div>
-      </div>
 
+        {/* Grid Area */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {roles.map((role, idx) => (
+            <div key={idx} className="bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center p-8 transition-all hover:shadow-md hover:-translate-y-1 duration-300">
+              <Search size={32} className="text-[#c5a365] mb-6" strokeWidth={1.5} />
+              
+              <h3 className="text-[#081225] text-[14px] font-semibold tracking-wide mb-8">{role}</h3>
+              
+              <div className="flex flex-col w-full gap-3 mt-auto">
+                <button className="flex items-center justify-center gap-2 w-full border border-[#081225] text-[#081225] py-2.5 text-[10px] font-bold tracking-wider hover:bg-[#081225] hover:text-white transition-colors">
+                  JOB SEEKER APPLY
+                </button>
+                <button className="flex items-center justify-center gap-2 w-full bg-[#081225] text-white py-2.5 text-[10px] font-bold tracking-wider hover:bg-[#c5a365] transition-colors">
+                  EMPLOYER APPLY
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+      </div>
     </section>
   );
 }

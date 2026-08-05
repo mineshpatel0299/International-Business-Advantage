@@ -1,4 +1,5 @@
 import React from 'react';
+import { BookOpen, GraduationCap } from 'lucide-react';
 
 export default function AcademySection() {
   const items = [
@@ -8,46 +9,51 @@ export default function AcademySection() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center pb-20">
+    <section className="w-full flex flex-col items-center py-24 bg-[#f8f6f0]">
       
       {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-4">
-        {/* Golden Border Container */}
-        <div className="border border-[#ffd700] p-8 md:p-12 w-full bg-[#0a2543]">
-          
-          <h2 className="text-white text-2xl md:text-3xl font-medium tracking-widest text-center mb-10 uppercase">
+      <div className="w-full max-w-[1400px] px-8 lg:px-24">
+        
+        {/* Header Area */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h3 className="text-[#c5a365] text-xs font-light tracking-[0.2em] uppercase mb-4">
+            Executive Education
+          </h3>
+          <h2 className="text-[#081225] text-3xl lg:text-4xl font-light leading-tight">
             VK Business Academy
           </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-            {items.map((title, idx) => (
-              <div key={idx} className="flex flex-col">
-                {/* Gray Placeholder Image */}
-                <div className="w-full aspect-[5/4] bg-[#cfd1d4] mb-3"></div>
-                
-                {/* Role Text */}
-                <div className="text-center mb-4 flex-1 flex flex-col justify-center">
-                  <h3 className="text-white text-[11px] lg:text-[12px] font-semibold tracking-wide leading-snug uppercase">
-                    {title}
-                  </h3>
-                </div>
-                
-                {/* Buttons Container */}
-                <div className="flex w-full mt-auto">
-                  <button className="flex-1 bg-[#1e4a86] hover:bg-[#1a3d6b] transition text-white py-2 px-1 text-[9px] font-bold tracking-wider text-center">
-                    READ MORE
-                  </button>
-                  <button className="flex-1 bg-[#3b82f6] hover:bg-blue-600 transition text-white py-2 px-1 text-[9px] font-bold tracking-wider text-center">
-                    REGISTER NOW
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          
+          <div className="w-16 h-0.5 bg-[#c5a365] mt-6"></div>
         </div>
-      </div>
 
+        {/* Grid Area */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {items.map((title, idx) => (
+            <div key={idx} className="bg-white border border-gray-100 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-[#c5a365]/30 transition-all duration-300 group cursor-pointer">
+              
+              <div className="w-10 h-10 rounded-full bg-[#f8f6f0] flex items-center justify-center mb-4 group-hover:bg-[#081225] transition-colors">
+                <BookOpen size={18} className="text-[#c5a365]" />
+              </div>
+              
+              <h3 className="text-[#081225] text-[11px] lg:text-[12px] font-semibold tracking-wide leading-snug uppercase mb-4 flex-1">
+                {title}
+              </h3>
+              
+              <button className="text-[#c5a365] text-[10px] font-bold tracking-wider hover:text-[#081225] transition-colors uppercase flex items-center gap-1">
+                Details <span className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">&rarr;</span>
+              </button>
+              
+            </div>
+          ))}
+        </div>
+        
+        {/* Bottom Call to action */}
+        <div className="mt-16 flex justify-center">
+          <button className="flex items-center gap-3 px-10 py-3 bg-[#081225] text-white text-xs font-semibold tracking-[0.15em] uppercase hover:bg-[#c5a365] hover:text-[#081225] transition-all duration-300">
+            <GraduationCap size={18} /> View All Programs
+          </button>
+        </div>
+        
+      </div>
     </section>
   );
 }
