@@ -39,7 +39,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#081225] pt-20 pb-12 px-8 lg:px-24 border-t border-white/5">
+    <footer className="w-full bg-[#0E1B2D] pt-20 pb-12 px-8 lg:px-24 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8">
         
         {/* Column 1: QUICK LINKS */}
@@ -156,7 +156,7 @@ export default function Footer() {
             
             <button 
               type="submit" 
-              className="w-full bg-[#c5a365] hover:bg-[#b09055] transition-colors text-[#081225] py-3 mt-2 text-[11px] font-bold tracking-widest uppercase"
+              className="w-full bg-[#c5a365] hover:bg-[#b09055] transition-colors text-[#0E1B2D] py-3 mt-2 text-[11px] font-bold tracking-widest uppercase"
             >
               Submit Request
             </button>

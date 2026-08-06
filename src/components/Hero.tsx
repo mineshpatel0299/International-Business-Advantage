@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import ParallaxWrapper from './ParallaxWrapper';
 
 const slides = [
   {
@@ -24,7 +25,37 @@ const slides = [
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
     title: "Transformational Coaching",
     subtitle: "ELEVATING EXECUTIVE POTENTIAL"
-  }
+  },
+  {
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    title: "Transformational Coaching",
+    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+  },
+  {
+    image: "/hero-bg.png",
+    title: "International Business Advantage",
+    subtitle: "A CXO BUSINESS NETWORK PLATFORM"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
+    title: "Global Leadership Excellence",
+    subtitle: "CONNECTING VISIONARY LEADERS"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    title: "Transformational Coaching",
+    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
+    title: "Global Leadership Excellence",
+    subtitle: "CONNECTING VISIONARY LEADERS"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    title: "Transformational Coaching",
+    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+  },
 ];
 
 export default function Hero() {
@@ -47,7 +78,7 @@ export default function Hero() {
 
   return (
     <div className="relative w-full flex flex-col">
-      <div className="relative w-full h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-[#081225]">
+      <div className="relative w-full h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-[#0E1B2D]">
         {/* Background Images */}
         {slides.map((slide, index) => (
           <div
@@ -55,23 +86,25 @@ export default function Hero() {
             className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
               }`}
           >
-            {slide.image.startsWith('/') ? (
-              <Image
-                src={slide.image}
-                alt="Background"
-                fill
-                className="object-cover object-center opacity-70"
-                priority={index === 0}
-              />
-            ) : (
-              <img
-                src={slide.image}
-                alt="Background"
-                className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
-              />
-            )}
+            <ParallaxWrapper offset={100} direction="down" className="absolute inset-0 w-full h-full scale-[1.15]">
+              {slide.image.startsWith('/') ? (
+                <Image
+                  src={slide.image}
+                  alt="Background"
+                  fill
+                  className="object-cover object-center opacity-70"
+                  priority={index === 0}
+                />
+              ) : (
+                <img
+                  src={slide.image}
+                  alt="Background"
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
+                />
+              )}
+            </ParallaxWrapper>
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#081225] via-[#081225]/50 to-[#081225]/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0E1B2D] via-[#0E1B2D]/50 to-[#0E1B2D]/20"></div>
           </div>
         ))}
 
@@ -96,23 +129,23 @@ export default function Hero() {
               key={index}
               className={`transition-all duration-1000 absolute flex flex-col items-center text-center w-full left-1/2 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
-              style={{ pointerEvents: index === currentSlide ? 'auto' : 'none', bottom: '15%', transform: index === currentSlide ? 'translateX(-50%)' : 'translate(-50%, 2rem)' }}
+              style={{ pointerEvents: index === currentSlide ? 'auto' : 'none', bottom: '2.75rem', transform: index === currentSlide ? 'translateX(-50%)' : 'translate(-50%, 2rem)' }}
             >
               <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 leading-tight whitespace-nowrap">
                 {slide.title}
               </h1>
-              <h2 className="text-[#c5a365] text-[10px] md:text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+              <h2 className="text-[#c5a365] text-[10px] md:text-sm font-semibold tracking-[0.2em] uppercase mb-2">
                 {slide.subtitle}
               </h2>
-              <button className="flex items-center gap-3 px-8 py-3 border border-[#c5a365]/50 text-[#c5a365] text-xs font-semibold tracking-[0.15em] uppercase hover:bg-[#c5a365] hover:text-[#081225] transition-all duration-300">
+              {/* <button className="flex items-center gap-3 px-8 py-3 border border-[#c5a365]/50 text-[#c5a365] text-xs font-semibold tracking-[0.15em] uppercase hover:bg-[#c5a365] hover:text-[#0E1B2D] transition-all duration-300">
                 EXPLORE NETWORK <ArrowRight size={16} />
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
 
         {/* Carousel Indicators */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
           {slides.map((_, index) => (
             <div
               key={index}
@@ -125,8 +158,8 @@ export default function Hero() {
       </div>
 
       {/* Bottom Banner */}
-      <div className="w-full bg-[#f8f6f0] py-6 z-20 border-b border-gray-200 shadow-sm relative">
-        <p className="text-xl md:text-3xl text-center text-gray-800 font-medium tracking-wide">
+      <div className="w-full bg-[#3fa2f6] py-6 z-20 shadow-sm relative">
+        <p className="text-xl md:text-3xl text-center text-white font-medium tracking-wide">
           Be an Achiever... not a performer
         </p>
       </div>

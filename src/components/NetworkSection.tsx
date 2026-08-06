@@ -1,64 +1,63 @@
 import React from 'react';
 import { ArrowRight, Users, UserCog, Megaphone, Briefcase, Monitor, FileText, DollarSign, UserCheck } from 'lucide-react';
+import ParallaxWrapper from './ParallaxWrapper';
 
 export default function NetworkSection() {
   const roles = [
-    { title: "Managing Director", icon: <Users size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Executive Officer", icon: <UserCog size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Marketing Officer", icon: <Megaphone size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Business Officer", icon: <Briefcase size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Digital Officer", icon: <Monitor size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Information Officer", icon: <FileText size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief Financial Officer", icon: <DollarSign size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> },
-    { title: "Chief HR Officer", icon: <UserCheck size={32} className="text-[#c5a365] mb-4" strokeWidth={1.5} /> }
+    { title: "Managing Director", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Executive Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Marketing Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Business Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Digital Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Information Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief Financial Officer", subtitle: "Business Network", buttonText: "Membership Open" },
+    { title: "Chief HR Officer", subtitle: "Business Network", buttonText: "Membership Open" }
   ];
 
   return (
-    <section className="w-full flex flex-col items-center py-24 bg-[#081225]">
-      
+    <section className="w-full flex flex-col items-center py-24 bg-[#0E1B2D]">
+
       {/* Main Content Area */}
       <div className="w-full max-w-[1400px] px-8 lg:px-24">
-        
-        {/* Header Area */}
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
-          <div className="lg:w-1/2">
-            <h3 className="text-[#c5a365] text-xs font-light tracking-[0.2em] uppercase mb-4">
-              Our Network
-            </h3>
-            <h2 className="text-white text-3xl lg:text-4xl font-light leading-tight">
-              CXO Business Network Platform:<br />
-              Connecting Global Leaders
+
+        {/* Golden Border Box */}
+        <div className="border border-[#c5a365] bg-[#0a2543] p-8 md:p-12 w-full">
+
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-light tracking-wide uppercase">
+              CXO Business Network Platform: Connecting Global
             </h2>
           </div>
-          <div className="lg:w-1/3">
-            <p className="text-gray-300 text-sm leading-relaxed font-light">
-              Join a curated community of CXOs and business leaders across industries and geographies. Collaborate, share insights, and grow together.
-            </p>
+
+          {/* Grid Area */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {roles.map((role, idx) => (
+              <div key={idx} className="flex flex-col h-full bg-[#0a2543]">
+                {/* Gray Image Placeholder */}
+                <div className="w-full aspect-square bg-[#dcdcdc]"></div>
+
+                {/* Text Content */}
+                <div className="flex flex-col items-center justify-center py-4 text-center flex-1">
+                  <h3 className="text-white text-[12px] font-bold tracking-wide uppercase">
+                    {role.title}
+                  </h3>
+                </div>
+
+                {/* Buttons - 50/50 Split */}
+                <div className="flex w-full mt-auto">
+                  <button className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 text-[9px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
+                    READ MORE
+                  </button>
+                  <button className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 text-[9px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
+                    REGISTER NOW
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Grid Area */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {roles.map((role, idx) => (
-            <div key={idx} className="bg-white flex flex-col items-center text-center p-8 transition-transform hover:-translate-y-1 duration-300">
-              {role.icon}
-              <h3 className="text-[#081225] text-[15px] font-semibold mb-1">{role.title}</h3>
-              <p className="text-gray-400 text-[10px] tracking-wider uppercase mb-8">Business Network</p>
-              
-              <button className="flex items-center gap-2 text-[#081225] text-[10px] font-bold tracking-[0.2em] uppercase hover:text-[#c5a365] transition-colors mt-auto">
-                Membership Open <ArrowRight size={14} />
-              </button>
-            </div>
-          ))}
         </div>
-        
-        {/* Bottom Button */}
-        <div className="flex justify-center">
-          <button className="flex items-center gap-3 px-8 py-3 border border-white/20 text-white text-xs font-semibold tracking-[0.15em] uppercase hover:bg-white hover:text-[#081225] transition-all duration-300">
-            View All Networks <ArrowRight size={16} />
-          </button>
-        </div>
-
       </div>
     </section>
   );

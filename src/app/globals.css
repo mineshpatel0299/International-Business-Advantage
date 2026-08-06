@@ -1,10 +1,33 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-poppins);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-poppins);
 }
 
 body {
   background: #0c1018;
   color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
 }
