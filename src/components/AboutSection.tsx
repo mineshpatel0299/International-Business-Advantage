@@ -7,7 +7,7 @@ export default function AboutSection() {
     <section className="w-full flex flex-col items-center py-24 relative bg-[#f8f6f0] overflow-visible">
 
       {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-8 lg:px-24 z-10">
+      <div className="w-full px-4 lg:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
 
           {/* Left Side: Content */}

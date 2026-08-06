@@ -16,10 +16,10 @@ export default function PartnershipsSection() {
     <section className="w-full flex flex-col items-center py-24 bg-[#0E1B2D]">
       
       {/* Main Content Area */}
-      <div className="w-full max-w-[1400px] px-8 lg:px-24">
+      <div className="w-full px-4 lg:px-8">
         
         {/* Golden Border Box */}
-        <div className="border border-[#c5a365] bg-[#0a2543] p-8 md:p-12 w-full">
+        <div className="border-2 border-[#eab308] bg-[#0a2543] p-8 md:p-12 w-full">
           
           {/* Header Area */}
           <div className="text-center mb-12">

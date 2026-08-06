@@ -33,22 +33,22 @@ export default function Navbar() {
       {/* Top Bar */}
       <div className="bg-[#0E1B2D] text-gray-300 py-1.5 px-6 flex justify-between items-center text-[11px] font-medium border-b border-gray-700">
         <div className="flex gap-2.5">
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaFacebookF size={13} />
           </div>
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaInstagram size={13} />
           </div>
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaLinkedinIn size={13} />
           </div>
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaXTwitter size={12} />
           </div>
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaWhatsapp size={14} />
           </div>
-          <div className="w-7 h-7 rounded-md border border-gray-600 flex items-center justify-center text-gray-300 cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
+          <div className="w-7 h-7 rounded-md border border-white flex items-center justify-center text-white cursor-pointer hover:border-[#3fa2f6] hover:bg-[#3fa2f6]/10 hover:text-[#3fa2f6] transition-all">
             <FaYoutube size={14} />
           </div>
         </div>
@@ -81,18 +81,18 @@ export default function Navbar() {
         {/* Right side buttons & search */}
         <div className="flex flex-col gap-3 w-full max-w-[460px]">
           <div className="flex gap-2 justify-between w-full">
-            <button className="bg-[#3fa2f6] text-white border border-[#3fa2f6] hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">JOB SEEKERS LOGIN</button>
-            <button className="bg-[#3fa2f6] text-white border border-[#3fa2f6] hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">EMPLOYERS LOGIN</button>
-            <button className="bg-[#3fa2f6] text-white border border-[#3fa2f6] hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">PARTNERS LOGIN</button>
+            <button className="bg-[#3fa2f6] text-white hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">JOB SEEKERS LOGIN</button>
+            <button className="bg-[#3fa2f6] text-white hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">EMPLOYERS LOGIN</button>
+            <button className="bg-[#3fa2f6] text-white hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">PARTNERS LOGIN</button>
           </div>
-          <div className="w-full flex border border-gray-600 p-[3px]">
+          <div className="w-full flex border border-white p-[3px]">
             <input
               type="text"
-              placeholder="Search..."
-              className="w-full outline-none text-[13px] placeholder:text-gray-400 text-gray-800 px-4 py-2 h-[36px] bg-white"
+              placeholder="Search"
+              className="w-full outline-none text-[13px] placeholder:text-[#285e8e] font-semibold text-gray-800 px-3 py-1.5 h-[34px] bg-white"
             />
-            <button className="bg-[#0E1B2D] border border-gray-600 hover:bg-gray-800 transition w-[46px] shrink-0 flex items-center justify-center text-white h-[36px]">
-              <ChevronRight size={20} strokeWidth={2} />
+            <button className="bg-[#285e8e] hover:bg-[#1e4a72] transition w-[42px] shrink-0 flex items-center justify-center text-white h-[34px]">
+              <ChevronRight size={20} strokeWidth={1.5} />
             </button>
           </div>
         </div>
