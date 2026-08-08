@@ -4,16 +4,16 @@ export default function EmployersSection() {
   const employers = Array.from({ length: 42 }); // 7 columns x 6 rows
 
   return (
-    <section className="w-full flex flex-col items-center py-24 bg-[#0E1B2D]">
-      
+    <section className="w-full flex flex-col items-center py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0E1B2D]">
+
       {/* Main Content Area */}
       <div className="w-full px-4 lg:px-8">
-        
+
         {/* Golden Border Box */}
-        <div className="border-2 border-[#eab308] bg-[#0a2543] p-8 md:p-12 w-full">
-          
+        <div className="border-2 border-[#eab308] bg-[#0a2543] p-5 sm:p-8 md:p-12 w-full">
+
           {/* Header Area */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-light tracking-wide uppercase">
               Top Employers
             </h2>

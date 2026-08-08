@@ -83,7 +83,7 @@ export default function Hero() {
 
   return (
     <div className="relative w-full flex flex-col">
-      <div className="relative w-full h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-[#0E1B2D]">
+      <div className="relative w-full h-[70vh] min-h-[420px] sm:min-h-[500px] md:h-[80vh] md:min-h-[600px] flex items-center overflow-hidden bg-[#0E1B2D]">
         {/* Background Images */}
         {slides.map((slide, index) => (
           <div
@@ -136,10 +136,10 @@ export default function Hero() {
                 }`}
               style={{ pointerEvents: index === currentSlide ? 'auto' : 'none', bottom: '2.75rem', transform: index === currentSlide ? 'translateX(-50%)' : 'translate(-50%, 2rem)' }}
             >
-              <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 leading-tight whitespace-nowrap">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-wide mb-2 leading-tight whitespace-normal md:whitespace-nowrap px-2">
                 {slide.title}
               </h1>
-              <h2 className="text-[#c5a365] text-[10px] md:text-sm font-semibold tracking-[0.2em] uppercase mb-2">
+              <h2 className="text-[#c5a365] text-[10px] md:text-sm font-semibold tracking-[0.2em] uppercase mb-2 px-2">
                 {slide.subtitle}
               </h2>
               {/* <button className="flex items-center gap-3 px-8 py-3 border border-[#c5a365]/50 text-[#c5a365] text-xs font-semibold tracking-[0.15em] uppercase hover:bg-[#c5a365] hover:text-[#0E1B2D] transition-all duration-300">
