@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import ParallaxWrapper from './ParallaxWrapper';
 
 const slides = [
   {
-    image: "/hero-bg.png",
+    image: "/ggg.png",
     title: "International Business Advantage",
     subtitle: "A CXO BUSINESS NETWORK PLATFORM"
   },
@@ -66,13 +66,6 @@ const slides = [
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
@@ -109,7 +102,7 @@ export default function Hero() {
               )}
             </ParallaxWrapper>
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E1B2D] via-[#0E1B2D]/50 to-[#0E1B2D]/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0E1B2D] via-[#0E1B2D]/60 to-[#0E1B2D]/20"></div>
           </div>
         ))}
 

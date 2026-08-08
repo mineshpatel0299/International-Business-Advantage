@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Users, UserCog, Megaphone, Briefcase, Monitor, FileText, DollarSign, UserCheck } from 'lucide-react';
 import ParallaxWrapper from './ParallaxWrapper';
 
@@ -49,9 +50,12 @@ export default function NetworkSection() {
                   <button className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
                     READ MORE
                   </button>
-                  <button className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
+                  <Link
+                    href="/enquiry"
+                    className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center"
+                  >
                     REGISTER NOW
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

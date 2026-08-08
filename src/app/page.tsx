@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LocationsBanner from "@/components/LocationsBanner";
 import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
 import NetworkSection from "@/components/NetworkSection";
 import GlobalSearchSection from "@/components/GlobalSearchSection";
 import AdvisorySection from "@/components/AdvisorySection";
@@ -18,12 +19,13 @@ export default function Home() {
       <Hero />
       <LocationsBanner />
       <AboutSection />
-      <NetworkSection />
-      <GlobalSearchSection />
-      <AdvisorySection />
-      <EventsSection />
-      <PartnershipsSection />
-      <AcademySection />
+      <ServicesSection />
+      {/* <NetworkSection /> */}
+      {/* <GlobalSearchSection /> */}
+      {/* <AdvisorySection /> */}
+      {/* <EventsSection /> */}
+      {/* <PartnershipsSection /> */}
+      {/* <AcademySection /> */}
       <EmployersSection />
       <Footer />
     </main>

@@ -41,13 +41,13 @@ const menuItems: MenuItem[] = [
     key: 'advisory',
     label: 'ADVISORY & CONSULTING',
     children: [
-      'CORPORATE GOVERNANCE ADVISORY',
-      'MEDIA ADVERTISING & PRODUCTION',
-      'BRANDING, PR & IMAGE CONSULTING',
-      'BUSINESS ADVISORY & CONSULTING',
-      'LEGAL ADVISORY & CONSULTING',
-      'FINANCIAL ADVISORY & CONSULTING',
+      'BOARD ADVISORY',
+      'BUSINESS ADVISORY AND CONSULTING',
+      'BRANDING, PR AND IMAGE CONSULTING',
+      'DIGITAL MARKETING AND MEDIA ADVERTISING',
       'HR TRANSFORMATIONAL CONSULTING',
+      'LEGAL ADVISORY AND CONSULTING',
+      'FINANCIAL ADVISORY AND CONSULTING',
     ],
   },
   {
@@ -56,8 +56,8 @@ const menuItems: MenuItem[] = [
     children: [
       'TRANSFORMATIONAL COACHING',
       'ENTREPRENEURIAL COACHING',
-      'MENTORING THE YOUNG LEADERS',
       'LEADERSHIP COACHING',
+      'MENTORING THE YOUNG LEADERS',
       'IMPACT SALES PROGRAMS',
       'SOFT SKILLS PROGRAMS',
       'INTERNSHIP PROGRAMS',
@@ -140,6 +140,9 @@ export default function Navbar() {
               className="object-contain"
             />
           </Link>
+          <span className="text-[14px] md:text-xs text-white tracking-[0.1em] font-semibold">
+            ibaglobalsearch.com
+          </span>
         </div>
 
         {/* Right side buttons & search - desktop only */}
