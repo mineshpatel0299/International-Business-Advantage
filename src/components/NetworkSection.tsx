@@ -40,19 +40,19 @@ export default function NetworkSection() {
 
                 {/* Text Content */}
                 <div className="flex flex-col items-center justify-center py-4 text-center flex-1">
-                  <h3 className="text-white text-[12px] font-bold tracking-wide uppercase">
+                  <h3 className="text-white text-[18px] font-semibold tracking-wide uppercase">
                     {role.title}
                   </h3>
                 </div>
 
                 {/* Buttons - 50/50 Split */}
                 <div className="flex w-full mt-auto">
-                  <button className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
+                  {/* <button className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center">
                     READ MORE
-                  </button>
+                  </button> */}
                   <Link
-                    href="/enquiry"
-                    className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center"
+                    href="/enquiry#enquiry-form"
+                    className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 text-[12px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center"
                   >
                     REGISTER NOW
                   </Link>
