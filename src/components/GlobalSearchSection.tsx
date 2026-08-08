@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Search, Briefcase, ChevronRight } from 'lucide-react';
 
 export default function GlobalSearchSection() {
@@ -41,12 +42,18 @@ export default function GlobalSearchSection() {
                 
                 {/* Buttons - 50/50 Split */}
                 <div className="flex w-full mt-auto">
-                  <button className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 px-1 text-[9px] font-bold tracking-wide whitespace-nowrap transition-colors flex items-center justify-center">
+                  <Link
+                    href="/job-seeker-enquiry"
+                    className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-2.5 px-1 text-[9px] font-bold tracking-wide whitespace-nowrap transition-colors flex items-center justify-center"
+                  >
                     JOB SEEKER APPLY HERE
-                  </button>
-                  <button className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 px-1 text-[9px] font-bold tracking-wide whitespace-nowrap transition-colors flex items-center justify-center">
+                  </Link>
+                  <Link
+                    href="/employer-enquiry"
+                    className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-2.5 px-1 text-[9px] font-bold tracking-wide whitespace-nowrap transition-colors flex items-center justify-center"
+                  >
                     EMPLOYER APPLY HERE
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

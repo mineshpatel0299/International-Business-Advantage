@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 
-type DocStep = {
+export type DocStep = {
   key: string;
   label: string;
   accept: string;
   maxSizeMB: number;
+  multiple?: boolean;
+  optional?: boolean;
 };
 
-const documentSteps: DocStep[] = [
+const defaultSteps: DocStep[] = [
   { key: "aadhar", label: "Aadhar Card", accept: ".pdf,.jpg,.jpeg,.png", maxSizeMB: 5 },
   { key: "pan", label: "PAN Card", accept: ".pdf,.jpg,.jpeg,.png", maxSizeMB: 5 },
   { key: "passport", label: "Passport", accept: ".pdf,.jpg,.jpeg,.png", maxSizeMB: 5 },
@@ -30,14 +32,19 @@ function validateFile(file: File, step: DocStep): string {
   return "";
 }
 
-export default function DocumentUploadStepper() {
+type DocumentUploadStepperProps = {
+  steps?: DocStep[];
+};
+
+export default function DocumentUploadStepper({ steps = defaultSteps }: DocumentUploadStepperProps) {
   const [activeStep, setActiveStep] = useState(0);
-  const [files, setFiles] = useState<Record<string, File | null>>({});
+  const [files, setFiles] = useState<Record<string, File[] | null>>({});
   const [error, setError] = useState("");
 
-  const current = documentSteps[activeStep];
-  const isLastStep = activeStep === documentSteps.length - 1;
-  const allDone = documentSteps.every((step) => files[step.key]);
+  const current = steps[activeStep];
+  const isLastStep = activeStep === steps.length - 1;
+  const hasFile = (key: string) => Boolean(files[key]?.length);
+  const allDone = steps.filter((step) => !step.optional).every((step) => hasFile(step.key));
 
   const goToStep = (idx: number) => {
     // Only completed steps or the current step can be revisited directly.
@@ -47,28 +54,34 @@ export default function DocumentUploadStepper() {
     }
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] ?? null;
-
-    if (!file) {
-      setFiles((prev) => ({ ...prev, [current.key]: null }));
-      return;
-    }
-
-    const validationError = validateFile(file, current);
-    if (validationError) {
-      setError(validationError);
-      e.target.value = "";
-      setFiles((prev) => ({ ...prev, [current.key]: null }));
-      return;
-    }
-
-    setError("");
-    setFiles((prev) => ({ ...prev, [current.key]: file }));
-
+  const advance = () => {
     if (!isLastStep) {
       setActiveStep((step) => step + 1);
     }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const fileList = e.target.files;
+
+    if (!fileList || fileList.length === 0) {
+      setFiles((prev) => ({ ...prev, [current.key]: null }));
+      return;
+    }
+
+    const selected = Array.from(fileList);
+    for (const file of selected) {
+      const validationError = validateFile(file, current);
+      if (validationError) {
+        setError(validationError);
+        e.target.value = "";
+        setFiles((prev) => ({ ...prev, [current.key]: null }));
+        return;
+      }
+    }
+
+    setError("");
+    setFiles((prev) => ({ ...prev, [current.key]: selected }));
+    advance();
   };
 
   const handleBack = () => {
@@ -82,7 +95,7 @@ export default function DocumentUploadStepper() {
 
       {/* Stepper Indicator */}
       <div className="flex items-start">
-        {documentSteps.map((step, idx) => (
+        {steps.map((step, idx) => (
           <div key={step.key} className="flex items-center flex-1 last:flex-none">
             <button
               type="button"
@@ -92,24 +105,25 @@ export default function DocumentUploadStepper() {
             >
               <div
                 className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold border transition-colors ${
-                  files[step.key]
+                  hasFile(step.key)
                     ? "bg-[#3fa2f6] border-[#3fa2f6] text-white"
                     : idx === activeStep
                     ? "border-[#c5a365] text-[#c5a365]"
                     : "border-white/15 text-gray-600"
                 }`}
               >
-                {files[step.key] ? <Check size={14} /> : idx + 1}
+                {hasFile(step.key) ? <Check size={14} /> : idx + 1}
               </div>
               <span
-                className={`text-[9px] uppercase tracking-wide text-center whitespace-nowrap ${
+                title={`Upload ${step.label}`}
+                className={`text-[9px] uppercase tracking-wide text-center max-w-[84px] truncate ${
                   idx === activeStep ? "text-white" : "text-gray-500"
                 }`}
               >
-                {step.label}
+                Upload {step.label}
               </span>
             </button>
-            {idx < documentSteps.length - 1 && (
+            {idx < steps.length - 1 && (
               <div
                 className={`flex-1 h-px mx-2 mt-[-14px] ${
                   idx < activeStep ? "bg-[#3fa2f6]" : "bg-white/15"
@@ -123,29 +137,44 @@ export default function DocumentUploadStepper() {
       {/* Current Step Upload */}
       <div className="flex flex-col gap-2 border border-white/10 p-4">
         <span className="text-white text-[12px] font-semibold uppercase tracking-wide">
-          Step {activeStep + 1} of {documentSteps.length}: Upload {current.label}
+          Step {activeStep + 1} of {steps.length}: Upload {current.label}
+          {current.optional && <span className="text-gray-500 normal-case"> (Optional)</span>}
         </span>
         <input
           key={current.key}
           type="file"
           accept={current.accept}
+          multiple={current.multiple}
           onChange={handleFileChange}
           className="w-full bg-white/5 border border-white/10 text-gray-400 file:mr-4 file:py-2.5 file:px-4 file:border-0 file:bg-[#285e8e] file:text-white file:text-[11px] file:font-bold file:uppercase file:tracking-wider file:cursor-pointer hover:file:bg-[#1e4a72] text-[12px] outline-none focus:border-[#c5a365]/50 transition-colors cursor-pointer"
         />
-        {files[current.key] && !error && (
-          <span className="text-[#3fa2f6] text-[11px]">Selected: {files[current.key]?.name}</span>
+        {hasFile(current.key) && !error && (
+          <span className="text-[#3fa2f6] text-[11px]">
+            Selected: {files[current.key]?.map((file) => file.name).join(", ")}
+          </span>
         )}
         {error && <span className="text-red-400 text-[11px]">{error}</span>}
 
-        {activeStep > 0 && (
-          <button
-            type="button"
-            onClick={handleBack}
-            className="self-start text-gray-400 hover:text-[#c5a365] text-[11px] font-bold tracking-wider uppercase transition-colors mt-1"
-          >
-            &larr; Back to {documentSteps[activeStep - 1].label}
-          </button>
-        )}
+        <div className="flex items-center gap-4 mt-1">
+          {activeStep > 0 && (
+            <button
+              type="button"
+              onClick={handleBack}
+              className="text-gray-400 hover:text-[#c5a365] text-[11px] font-bold tracking-wider uppercase transition-colors"
+            >
+              &larr; Back to {steps[activeStep - 1].label}
+            </button>
+          )}
+          {current.optional && !hasFile(current.key) && !isLastStep && (
+            <button
+              type="button"
+              onClick={advance}
+              className="text-gray-400 hover:text-[#c5a365] text-[11px] font-bold tracking-wider uppercase transition-colors"
+            >
+              Skip &rarr;
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Completion Summary */}
@@ -155,9 +184,12 @@ export default function DocumentUploadStepper() {
             <Check size={14} /> All documents uploaded
           </span>
           <ul className="flex flex-col gap-1">
-            {documentSteps.map((step) => (
+            {steps.map((step) => (
               <li key={step.key} className="text-gray-400 text-[11px]">
-                {step.label}: <span className="text-gray-300">{files[step.key]?.name}</span>
+                {step.label}:{" "}
+                <span className="text-gray-300">
+                  {files[step.key]?.map((file) => file.name).join(", ") || "Skipped"}
+                </span>
               </li>
             ))}
           </ul>

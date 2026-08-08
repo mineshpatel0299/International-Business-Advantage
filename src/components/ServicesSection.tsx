@@ -40,19 +40,13 @@ export default function ServicesSection() {
                   </h3>
                 </div>
 
-                {/* Buttons - 50/50 Split */}
+                {/* Single Action Button */}
                 <div className="flex w-full mt-auto">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="flex-1 bg-[#285e8e] hover:bg-[#1e4a72] text-white py-3 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center"
-                  >
-                    READ MORE
-                  </Link>
-                  <Link
-                    href="/enquiry#enquiry-form"
                     className="flex-1 bg-[#3fa2f6] hover:bg-[#2e8ee6] text-white py-3 text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center"
                   >
-                    REGISTER NOW
+                    APPLY NOW
                   </Link>
                 </div>
               </div>
