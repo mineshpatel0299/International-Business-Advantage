@@ -92,26 +92,23 @@ export default function EmployerEnquiryForm() {
                 setStep("documents");
               }}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <FieldInput label="Name Of The Company" />
-                <FieldInput label="Name Of The Person" />
-              </div>
-              <FieldInput label="Designation" />
-
-              <FieldTextarea label="Permanent Address" />
-              <FieldTextarea label="Present Address" />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {personFields.map((field) => (
-                  <FieldInput key={field.label} {...field} />
-                ))}
-              </div>
-
+              <FieldInput label="Name Of The Company" />
               <FieldTextarea label="Company HQ Address" />
               <FieldTextarea label="Current Office Address" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {companyRegistrationFields.map((field) => (
+                  <FieldInput key={field.label} {...field} />
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <FieldInput label="Name Of The Person" />
+                <FieldInput label="Designation" />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {personFields.map((field) => (
                   <FieldInput key={field.label} {...field} />
                 ))}
               </div>
