@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full font-sans relative z-50 flex flex-col shadow-sm">
+    <div className="w-full font-heading relative z-50 flex flex-col shadow-sm">
       {/* Top Bar */}
       <div className="bg-[#0E1B2D] text-gray-300 py-1.5 px-6 flex justify-between items-center text-[11px] font-medium border-b border-gray-700">
         <div className="flex gap-2.5">
@@ -85,13 +85,13 @@ export default function Navbar() {
             <button className="bg-[#3fa2f6] text-white hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">EMPLOYERS LOGIN</button>
             <button className="bg-[#3fa2f6] text-white hover:bg-[#2e8ee6] text-[10px] font-bold py-2 px-3 flex-1 whitespace-nowrap tracking-[0.1em] transition-all">PARTNERS LOGIN</button>
           </div>
-          <div className="w-full flex border border-white p-[3px]">
+          <div className="w-full flex border border-white p-[3px] gap-[3px]">
             <input
               type="text"
               placeholder="Search"
-              className="w-full outline-none text-[13px] placeholder:text-[#285e8e] font-semibold text-gray-800 px-3 py-1.5 h-[34px] bg-white"
+              className="w-full outline-none text-[13px]  font-semibold text-gray-800 px-3 py-1.5 h-[34px] bg-white"
             />
-            <button className="bg-[#285e8e] hover:bg-[#1e4a72] transition w-[42px] shrink-0 flex items-center justify-center text-white h-[34px]">
+            <button className="bg-[#3fa2f6] hover:bg-[#2e8ee6] transition w-[42px] shrink-0 flex items-center justify-center text-white h-[34px]">
               <ChevronRight size={20} strokeWidth={1.5} />
             </button>
           </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
       </div>
 
       {/* Navigation Main Menu - Static positioned row */}
-      <div className="w-full bg-[#132c4a] text-white text-[11px] lg:text-[9px] xl:text-[10px] font-bold font-heading tracking-[0.05em] lg:tracking-[0.1em] flex border-y border-white relative">
+      <div className="w-full bg-[#132c4a] text-white text-[17px] lg:text-[15px] xl:text-[16px] font-semibold font-heading tracking-[0.05em] lg:tracking-[0.1em] flex border-y border-white relative">
 
         {/* ABOUT US */}
         <div className="relative group flex-auto border-r border-white">

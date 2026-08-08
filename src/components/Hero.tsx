@@ -13,49 +13,54 @@ const slides = [
   },
   {
     image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
-    title: "Global Leadership Excellence",
-    subtitle: "CONNECTING VISIONARY LEADERS"
+    title: "Executive Search Partners",
+    subtitle: "FINDING TOP TIER TALENT"
   },
   {
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
-    title: "Strategic Corporate Alliances",
-    subtitle: "EMPOWERING BUSINESS GROWTH"
+    title: "Recruitment Partners",
+    subtitle: "BUILDING STRONG TEAMS"
   },
   {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-    title: "Transformational Coaching",
-    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-    title: "Transformational Coaching",
-    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
-  },
-  {
-    image: "/hero-bg.png",
-    title: "International Business Advantage",
-    subtitle: "A CXO BUSINESS NETWORK PLATFORM"
+    title: "Campus Hiring Partners",
+    subtitle: "EMPOWERING FUTURE LEADERS"
   },
   {
     image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
-    title: "Global Leadership Excellence",
-    subtitle: "CONNECTING VISIONARY LEADERS"
+    title: "Business & Marketing Consulting",
+    subtitle: "DRIVING STRATEGIC GROWTH"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+    title: "HR Consulting & Transformation",
+    subtitle: "OPTIMIZING HUMAN CAPITAL"
   },
   {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-    title: "Transformational Coaching",
-    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+    title: "IT Support Consulting",
+    subtitle: "ENABLING DIGITAL EXCELLENCE"
   },
   {
     image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
-    title: "Global Leadership Excellence",
-    subtitle: "CONNECTING VISIONARY LEADERS"
+    title: "Leadership Coaching Solutions",
+    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+    title: "Trainers Academy",
+    subtitle: "SHAPING MASTER EDUCATORS"
   },
   {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-    title: "Transformational Coaching",
-    subtitle: "ELEVATING EXECUTIVE POTENTIAL"
+    title: "Impact Sales Training",
+    subtitle: "MAXIMIZING REVENUE GROWTH"
   },
+  {
+    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=2070&auto=format&fit=crop",
+    title: "Soft Skills Training",
+    subtitle: "ENHANCING PROFESSIONAL COMMUNICATION"
+  }
 ];
 
 export default function Hero() {
